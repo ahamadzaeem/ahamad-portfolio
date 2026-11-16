@@ -39,3 +39,4 @@ html = html.replace(
 
 fs.writeFileSync('public/index.html', html, 'utf8');
 console.log('All content updates applied!');
+
