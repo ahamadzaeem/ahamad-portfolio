@@ -45,3 +45,4 @@ html = html.replace(
 fs.writeFileSync('public/index.html', html, 'utf8');
 console.log('Favicon Z logo replaced!');
 console.log('Favicons updated:', html.includes('ededeb'));
+
