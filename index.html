@@ -37,15 +37,17 @@
 
 
 
+
 <style id="fix-bg-bleed-and-layout">
   #header {
     position: relative;
-    z-index: 1;
   }
-  /* Ensure all sections below the header have an opaque background and higher z-index */
+  /* Keep .section__info transparent so the sticky portrait is visible beside the About/Services column */
+  .section__info {
+    background-color: transparent !important;
+  }
+  /* Only sections AFTER #header occlude the sticky hero */
   #about,
-  .section__about,
-  .section__info,
   section:has(.heading-extreme),
   #work,
   .glass-carousel,
@@ -54,15 +56,11 @@
   #contact,
   .section-footer {
     position: relative !important;
-    z-index: 5 !important;
+    z-index: 10 !important;
     background-color: #0c0c0d !important;
   }
-
-  /* Prevent canvas sequence or sticky container from showing underneath work carousel */
-  .image-sequence__wrap {
-    pointer-events: none;
-  }
 </style>
+
 
 
 <style id="fix-carousel-ghost">
