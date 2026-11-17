@@ -195,6 +195,104 @@
   }
 </style>
 
+
+<style id="fix-text-and-menu-overlaps">
+  /* =========================================================
+     FIX 1: STAGGER LINK ANIMATION & LAYER OVERLAP
+     ========================================================= */
+  [data-link-stagger] {
+    display: inline-block;
+    position: relative;
+    overflow: hidden !important;
+    vertical-align: top;
+  }
+  .stagger-link__inner {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .stagger-link__layer {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+  }
+  .stagger-link__layer--hover {
+    position: absolute;
+    inset: 0%;
+    pointer-events: none;
+  }
+  .stagger-link__char {
+    display: inline-block;
+    position: relative;
+    will-change: transform;
+  }
+
+  /* =========================================================
+     FIX 2: FULLSCREEN MENU OVERLAY STACKING & TYPOGRAPHY
+     ========================================================= */
+  .navbar-link-wrapper {
+    z-index: 9999 !important;
+    background-color: #0c0c0d !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    position: fixed !important;
+    inset: 0% !important;
+  }
+  .navbar-link-wrapper .nav-link {
+    font-size: clamp(2.5rem, 7vw, 5.5rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    color: #ededeb !important;
+    text-decoration: none !important;
+  }
+
+  /* =========================================================
+     FIX 3: WORK SECTION HEADING OVERLAP
+     ========================================================= */
+  /* Prevent giant 32vw WORK title from colliding over carousel active captions */
+  .heading-extreme {
+    font-size: clamp(60px, 16vw, 160px) !important;
+    line-height: 0.9 !important;
+    margin-bottom: 2rem !important;
+    pointer-events: none !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* =========================================================
+     FIX 4: CAROUSEL CAPTION POSITIONING
+     ========================================================= */
+  .glass-carousel__caption {
+    top: 6% !important;
+    z-index: 30 !important;
+    pointer-events: none !important;
+  }
+  .glass-carousel__item-p {
+    font-size: clamp(1.8rem, 3.8vw, 3.5rem) !important;
+    letter-spacing: -0.02em !important;
+    color: #ededeb !important;
+  }
+  .glass-carousel__item-p.is--faded {
+    font-size: clamp(0.85rem, 1.1vw, 1.1rem) !important;
+    color: #8a8a88 !important;
+    margin-top: 0.35rem !important;
+  }
+
+  /* =========================================================
+     FIX 5: PLAYFAIR DISPLAY ITALIC 'O' STYLING
+     ========================================================= */
+  .playfair-o {
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic !important;
+    display: inline-block !important;
+    position: relative !important;
+    left: -0.03em !important;
+    margin-right: 0.02em !important;
+  }
+</style>
+
 </head><body><div class="global-styles w-embed"><style>
 
 .playfair-o {
