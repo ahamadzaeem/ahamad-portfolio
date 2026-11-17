@@ -108,9 +108,9 @@
      MOBILE & RESPONSIVE OPTIMIZATIONS
      ========================================================= */
 
-  /* Prevent unintended horizontal scroll / blowout on small screens */
-  html, body {
-    overflow-x: hidden !important;
+  /* Prevent unintended horizontal blowout safely without breaking position:sticky on ancestor elements */
+  .page-wrapper {
+    overflow-x: clip !important;
     width: 100% !important;
     max-width: 100vw !important;
   }
